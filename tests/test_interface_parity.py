@@ -3,7 +3,7 @@
 import inspect
 
 import pytest
-from ezpg.pool import AsyncDatabasePool
+from ezpg.async_pool import AsyncDatabasePool
 from ezpg.sync_pool import SyncDatabasePool
 
 # Methods that should exist on both classes with matching signatures

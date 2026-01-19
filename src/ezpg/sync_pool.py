@@ -1,12 +1,17 @@
 """Sync database connection and pool management using psycopg3."""
 
+import json
 import logging
 from collections.abc import Iterator
 from contextlib import contextmanager
 from typing import Any
 
 from psycopg import Connection
+from psycopg.types.json import set_json_loads
 from psycopg_pool import ConnectionPool
+
+# Configure JSON/JSONB to auto-decode to Python objects (matching asyncpg behavior)
+set_json_loads(json.loads)
 
 logger = logging.getLogger(__name__)
 
